@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "org.biodifull",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "5.3.4",
+    "applicationType": "monolith",
+    "baseName": "biodifullpoc",
+    "packageName": "org.biodifull",
+    "packageFolder": "org/biodifull",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NjVhMmRmMTM3YWRjMGI4OTliNGRjOTVhNWY0ODk1Y2ZmYmZhNDhjNjhlN2IwNmYzYmNmNGJkMTg0NzI3MjQ1M2Y0M2RmYjA4NWU4YmFlNjBlYmZiNGYzYTRhYWFmMDE3ZWI5NjVkMjg1NTZkYzk4Y2U4ZTEyYjEyZTk3ZTU4N2I=",
+    "clientFramework": "react",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "fr"
+    ]
+  }
+}
