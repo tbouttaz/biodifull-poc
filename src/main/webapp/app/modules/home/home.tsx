@@ -69,17 +69,17 @@ export class Home extends React.Component<IHomeProp> {
             </div>
           )}
 
-          <p>
-            <Translate contentKey="home.survey.list">List of open surveys</Translate>
-          </p>
-
           {/* TODO - Display appropriate name according to Locale */}
           <p>Current locale: {currentLocale}</p>
+
+          <p>
+            <Translate contentKey="home.survey.list">You can answer the following surveys</Translate>
+          </p>
 
           <ul>
             {surveyList.map((survey, i) => (
               <li>
-                <a href={`#/entity/survey/${survey.id}`} rel="noopener noreferrer">
+                <a href={`#/entity/survey/${survey.id}/answer`} rel="noopener noreferrer">
                   {survey.surveyName}
                 </a>
               </li>
