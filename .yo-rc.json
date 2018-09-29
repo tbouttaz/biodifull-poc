@@ -33,6 +33,8 @@
     "languages": [
       "en",
       "fr"
-    ]
+    ],
+    "herokuAppName": "biodifullpoc",
+    "herokuDeployType": "git"
   }
 }
