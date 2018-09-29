@@ -2,12 +2,13 @@ import './home.css';
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Translate } from 'react-jhipster';
+import { Translate, TranslatorContext } from 'react-jhipster';
 import { connect } from 'react-redux';
 import { Row, Col, Alert } from 'reactstrap';
 
 import { IRootState } from 'app/shared/reducers';
 import { getSession } from 'app/shared/reducers/authentication';
+import { getEntities, reset } from 'app/entities/survey/survey.reducer';
 
 export interface IHomeProp extends StateProps, DispatchProps {}
 
@@ -16,16 +17,26 @@ export class Home extends React.Component<IHomeProp> {
     this.props.getSession();
   }
 
+  componentWillMount() {
+    this.getEntities();
+  }
+
+  getEntities = () => {
+    this.props.getEntities(0, 20, 'id,asc');
+  };
+
   render() {
-    const { account } = this.props;
+    const { surveyList, account } = this.props;
+    const currentLocale = TranslatorContext.context.locale || TranslatorContext.context.defaultLocale;
+
     return (
       <Row>
         <Col md="9">
           <h2>
-            <Translate contentKey="home.title">Welcome, Java Hipster!</Translate>
+            <Translate contentKey="home.title">Welcome to the Biodifull Project!</Translate>
           </h2>
           <p className="lead">
-            <Translate contentKey="home.subtitle">This is your homepage</Translate>
+            <Translate contentKey="home.subtitle">The Biodifull project aims to ...</Translate>
           </p>
           {account && account.login ? (
             <div>
@@ -57,41 +68,27 @@ export class Home extends React.Component<IHomeProp> {
               </Alert>
             </div>
           )}
+
           <p>
-            <Translate contentKey="home.question">If you have any question on JHipster:</Translate>
+            <Translate contentKey="home.survey.list">List of open surveys</Translate>
           </p>
 
+          {/* TODO - Display appropriate name according to Locale */}
+          <p>Current locale: {currentLocale}</p>
+
           <ul>
-            <li>
-              <a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer">
-                <Translate contentKey="home.link.homepage">JHipster homepage</Translate>
-              </a>
-            </li>
-            <li>
-              <a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener noreferrer">
-                <Translate contentKey="home.link.stackoverflow">JHipster on Stack Overflow</Translate>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener noreferrer">
-                <Translate contentKey="home.link.bugtracker">JHipster bug tracker</Translate>
-              </a>
-            </li>
-            <li>
-              <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
-                <Translate contentKey="home.link.chat">JHipster public chat room</Translate>
-              </a>
-            </li>
-            <li>
-              <a href="https://twitter.com/java_hipster" target="_blank" rel="noopener noreferrer">
-                <Translate contentKey="home.link.follow">follow @java_hipster on Twitter</Translate>
-              </a>
-            </li>
+            {surveyList.map((survey, i) => (
+              <li>
+                <a href={`entity/survey/${survey.id}`} target="_blank" rel="noopener noreferrer">
+                  {survey.surveyName}
+                </a>
+              </li>
+            ))}
           </ul>
 
           <p>
-            <Translate contentKey="home.like">If you like JHipster, do not forget to give us a star on</Translate>{' '}
-            <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
+            <Translate contentKey="home.like">If you like Biodifull, do not forget to give us a star on</Translate>{' '}
+            <a href="https://github.com/tbouttaz/biodifull-poc" target="_blank" rel="noopener noreferrer">
               Github
             </a>!
           </p>
@@ -106,10 +103,11 @@ export class Home extends React.Component<IHomeProp> {
 
 const mapStateToProps = storeState => ({
   account: storeState.authentication.account,
-  isAuthenticated: storeState.authentication.isAuthenticated
+  isAuthenticated: storeState.authentication.isAuthenticated,
+  surveyList: storeState.survey.entities
 });
 
-const mapDispatchToProps = { getSession };
+const mapDispatchToProps = { getEntities, getSession };
 
 type StateProps = ReturnType<typeof mapStateToProps>;
 type DispatchProps = typeof mapDispatchToProps;
