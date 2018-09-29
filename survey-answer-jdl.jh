@@ -1,0 +1,27 @@
+entity Survey {
+	surveyName String
+    surveyDescription String
+    formURL String
+    challengersLocation String
+    open Boolean
+}
+
+entity Answer {
+	jugeID String
+    challenger1 String
+    challenger2 String
+    winner String
+}
+
+relationship ManyToOne {
+	Answer{Survey} to Survey
+}
+
+// Set pagination options
+paginate Survey  with infinite-scroll
+paginate Answer with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl

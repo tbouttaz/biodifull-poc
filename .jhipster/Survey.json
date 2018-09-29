@@ -1,0 +1,35 @@
+{
+    "name": "Survey",
+    "fields": [
+        {
+            "fieldName": "surveyName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "surveyDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "formURL",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "challengersLocation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "open",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20180929081623",
+    "entityTableName": "survey",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
