@@ -79,7 +79,7 @@ export class Home extends React.Component<IHomeProp> {
           <ul>
             {surveyList.map((survey, i) => (
               <li>
-                <a href={`entity/survey/${survey.id}`} target="_blank" rel="noopener noreferrer">
+                <a href={`#/entity/survey/${survey.id}`} rel="noopener noreferrer">
                   {survey.surveyName}
                 </a>
               </li>

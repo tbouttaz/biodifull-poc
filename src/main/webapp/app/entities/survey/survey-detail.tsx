@@ -47,6 +47,16 @@ export class SurveyDetail extends React.Component<ISurveyDetailProps> {
             </dt>
             <dd>{surveyEntity.formURL}</dd>
             <dt>
+              <span id="embededForm">
+                <Translate contentKey="biodifullpocApp.survey.form.embedded">Embedded Form</Translate>
+              </span>
+            </dt>
+            <dd>
+              <iframe src={surveyEntity.formURL} width="700" height="520" frameBorder="0" marginHeight="0" marginWidth="0">
+                Loading...
+              </iframe>
+            </dd>
+            <dt>
               <span id="challengersLocation">
                 <Translate contentKey="biodifullpocApp.survey.challengersLocation">Challengers Location</Translate>
               </span>

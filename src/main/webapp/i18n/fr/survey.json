@@ -20,7 +20,10 @@
             "surveyDescription": "Survey Description",
             "formURL": "Form URL",
             "challengersLocation": "Challengers Location",
-            "open": "Open"
+            "open": "Open",
+            "form": {
+                "embedded": "Formulaire socio-professionel en ligne"
+            }
         }
     }
 }
