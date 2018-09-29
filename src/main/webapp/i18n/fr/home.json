@@ -1,19 +1,15 @@
 {
     "home": {
-        "title": "Bienvenue, Java Hipster !",
-        "subtitle": "Ceci est votre page d'accueil",
+        "title": "Bienvenue sur le projet Biodifull!",
+        "subtitle": "Le projet Biodifull a pour but de ...",
         "logged": {
             "message": "Vous êtes connecté en tant que \"{{username}}\"."
         },
         "question": "Si vous avez des questions à propos de JHipster :",
-        "link": {
-            "homepage": "Page d'accueil de JHipster",
-            "stackoverflow": "JHipster sur Stack Overflow",
-            "bugtracker": "JHipster bug tracker",
-            "chat": "JHipster public chat room",
-            "follow": "Suivez @java_hipster sur Twitter"
+        "survey": {
+            "list": "Liste de campagnes ouvertes"
         },
-        "like": "Si vous aimez JHipster, donnez nous une étoile sur",
+        "like": "Si vous aimez Biodifull, donnez nous une étoile sur",
         "github": "GitHub "
     }
 }
