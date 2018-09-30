@@ -5,7 +5,7 @@ import { Button, Row, Col } from 'reactstrap';
 // tslint:disable-next-line:no-unused-variable
 import { Translate, ICrudGetAction } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {RadioGroup, Radio} from 'react-radio-group'
+import { RadioGroup, Radio } from 'react-radio-group';
 
 import { IRootState } from 'app/shared/reducers';
 import { getEntity } from './survey.reducer';
@@ -43,14 +43,16 @@ export class SurveyAnswer extends React.Component<ISurveyAnswerProps> {
             <dd>
               {/* TODO - use Flikr API?
               http://cassandra.gelvins.com/tools/randm-flickr-pickr/
-              https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d61091b4772d0e40c3743b6a5fc54084&license=&min_upload_date=1536113113&max_upload_date=1536120313&orientation=landscape,portrait,square,panorama&safe_search=1&url_o&per_page=100&format=json&nojsoncallback=1
+              too long
+              https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d61091b4772d0e40c3743b6a5fc54084&license=&min_upload_date=1536113113
+              &max_upload_date=1536120313&orientation=landscape,portrait,square,panorama&safe_search=1&url_o&per_page=100&format=json&nojsoncallback=1
               https://www.flickr.com/services/api/flickr.collections.getTree.html
               https://www.flickr.com/photos/{user-id}/{photo-id} - individual photo
               https://www.flickr.com/services/api/misc.urls.html */}
 
             <RadioGroup name="match1">
-              <Radio value="photo1" />GOPR0111_0853 <img src="content/images/survey/GOPR0111_0853.png"></img>
-              <Radio value="photo2" />GOPR0111_2136 <img src="content/images/survey/GOPR0111_2136.png"></img>
+              <Radio value="photo1" />GOPR0111_0853 <img src="content/images/survey/GOPR0111_0853.png" />
+              <Radio value="photo2" />GOPR0111_2136 <img src="content/images/survey/GOPR0111_2136.png" />
             </RadioGroup>
             </dd>
             <dt>
@@ -64,6 +66,9 @@ export class SurveyAnswer extends React.Component<ISurveyAnswerProps> {
               </iframe>
             </dd>
           </dl>
+
+          {/* TODO - NEXT: save a new Answer rather than a Survey */}
+
           <Button tag={Link} to="/entity/survey" replace color="info">
             <FontAwesomeIcon icon="arrow-left" />{' '}
             <span className="d-none d-md-inline">

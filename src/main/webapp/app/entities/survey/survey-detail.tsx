@@ -81,6 +81,12 @@ export class SurveyDetail extends React.Component<ISurveyDetailProps> {
               <Translate contentKey="entity.action.edit">Edit</Translate>
             </span>
           </Button>
+          <Button tag={Link} to={`/entity/survey/${surveyEntity.id}/answer`} replace color="info">
+            <FontAwesomeIcon icon="pencil-alt" />{' '}
+            <span className="d-none d-md-inline">
+              Answer this survey
+            </span>
+          </Button>
         </Col>
       </Row>
     );
