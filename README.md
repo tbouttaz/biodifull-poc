@@ -1,9 +1,10 @@
 # biodifullpoc
+Biodifull
 This application was generated using JHipster 5.3.4, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v5.3.4](https://www.jhipster.tech/documentation-archive/v5.3.4).
 
 ## Development
 
-Before you can build this project, you must install and configure the following dependencies on your machine:
+Before you can build this project, you must install and configure the following dependencies on your machine: 
 
 1. [Node.js][]: We use Node to run a development web server and build the project.
    Depending on your system, you can install Node either from source or as a pre-packaged bundle.
